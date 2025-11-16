@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Rupiya.app — Investors</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">rupiya.app</a>
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="farmers.html">Farmers</a>
+        <a href="fpos.html">FPOs</a>
+        <a href="buyers.html">Buyers</a>
+        <a href="investors.html" class="active">Investors</a>
+      </nav>
+      <a class="cta" href="#investSignup">Invest</a>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container page">
+    <section class="page-hero">
+      <h1>For Investors & Carbon Credit Buyers</h1>
+      <p class="lede">Transparent impact, growth potential, and verified collaborations to build trust in climate‑smart agriculture.</p>
+    </section>
+
+    <section class="impact">
+      <h2>Impact Numbers</h2>
+      <div class="quick-facts">
+        <div>
+          <strong>Farmers Onboarded</strong>
+          <p>5,000+ across multiple states</p>
+        </div>
+        <div>
+          <strong>Residue‑free Acres</strong>
+          <p>12,000+ acres verified</p>
+        </div>
+        <div>
+          <strong>Carbon Credits Generated</strong>
+          <p>50,000+ tonnes CO₂e</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="growth">
+      <h2>Growth Graphs</h2>
+      <p>Our trajectory shows exponential growth in farmer participation and verified carbon credits. Graphs and dashboards are available for investors upon request.</p>
+    </section>
+
+    <section class="collaborations">
+      <h2>Collaborations & MoUs</h2>
+      <ul class="benefits">
+        <li>MoU with leading FPO federations</li>
+        <li>Partnerships with institutional buyers (ITC, Reliance, Mother Dairy)</li>
+        <li>Joint initiatives with agri‑tech startups</li>
+      </ul>
+    </section>
+
+    <section class="feedback">
+      <h2>Farmer Feedback</h2>
+      <blockquote class="testimonial">
+        "Carbon credits gave us a new income stream and confidence in sustainable farming."
+        <cite>— Farmer, Punjab</cite>
+      </blockquote>
+    </section>
+
+    <section class="supplychain">
+      <h2>Supply Chain Achievements</h2>
+      <p>We have established traceable supply chains from farm to buyer, ensuring quality, certification, and transparency at every step.</p>
+    </section>
+
+    <section class="signup" id="investSignup">
+      <h2>Investor Sign‑Up</h2>
+      <p>Register your interest to receive detailed impact reports and investment opportunities.</p>
+      <form id="investForm" class="form">
+        <label>Investor / Company name
+          <input type="text" name="investorName" required />
+        </label>
+        <label>Contact person
+          <input type="text" name="contactName" required />
+        </label>
+        <label>Email
+          <input type="email" name="email" required />
+        </label>
+        <label>Area of interest
+          <input type="text" name="interest" />
+        </label>
+        <button type="submit" class="btn">Register Interest</button>
+        <p id="investMsg" class="form-msg" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <strong>rupiya.app</strong></p>
+    </div>
+  </footer>
+
+  <!-- Script -->
+  <script>
+    const investForm = document.getElementById('investForm');
+    if (investForm) {
+      investForm.addEventListener('submit', function (ev) {
+        ev.preventDefault();
+        const msg = document.getElementById('investMsg');
+        const name = investForm.elements['investorName'].value || 'Investor';
+        msg.textContent = `Thanks ${name}. Your interest is registered — our investment team will contact you soon.`;
+        investForm.reset();
+      });
+    }
+  </script>
+</body>
+</html>

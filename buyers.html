@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Rupiya.app — Institutional Buyers</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">rupiya.app</a>
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="farmers.html">Farmers</a>
+        <a href="fpos.html">FPOs</a>
+        <a href="buyers.html" class="active">Buyers</a>
+      </nav>
+      <a class="cta" href="#procurement">Procurement</a>
+    </div>
+  </header>
+
+  <main class="container page">
+    <section class="page-hero">
+      <h1>For Institutional Buyers</h1>
+      <p class="lede">Secure traceable, certified produce with consistent quality and reliable supply chains.</p>
+    </section>
+
+    <section class="quality">
+      <h2>Quality consistency</h2>
+      <p>Standardized field-level protocols, randomized sampling and digital quality reports ensure consistent produce quality across seasons.</p>
+    </section>
+
+    <section class="traceability">
+      <h2>Traceability</h2>
+      <p>End-to-end digital trace from plot to packing, with batch-level QR codes and export-ready documentation.</p>
+      <div class="quick-facts">
+        <div>
+          <strong>Field to Batch</strong>
+          <p>Plot identifiers and harvest logs.</p>
+        </div>
+        <div>
+          <strong>Chain of Custody</strong>
+          <p>Audit trails for aggregation and transport.</p>
+        </div>
+        <div>
+          <strong>Certifications</strong>
+          <p>Support for recognized standards and buyer-specific audits.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="procurement" id="procurement">
+      <h2>Procurement process</h2>
+      <ol class="steps">
+        <li>Define quality and volume requirements with our sourcing team.</li>
+        <li>Source matching and sample verification from partnered FPOs.</li>
+        <li>Contracting, logistics and scheduled pick-ups.</li>
+        <li>Quality checks, traceability handover and settlement.</li>
+      </ol>
+      <p class="lede">To start a procurement discussion, fill the form below.</p>
+
+      <form id="buyerForm" class="form">
+        <label>Company name
+          <input type="text" name="company" required />
+        </label>
+        <label>Procurement lead
+          <input type="text" name="lead" required />
+        </label>
+        <label>Phone or email
+          <input type="text" name="contact" required />
+        </label>
+        <label>Interested crops / volumes
+          <input type="text" name="volumes" />
+        </label>
+        <button type="submit" class="btn">Request Sourcing Call</button>
+        <p id="buyerMsg" class="form-msg" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section class="certs">
+      <h2>Certifications & Compliance</h2>
+      <p>We help facilitate required certifications and buyer-specific compliance checks to make procurement seamless and audit-ready.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <strong>rupiya.app</strong></p>
+    </div>
+  </footer>
+
+  <script>
+    const buyerForm = document.getElementById('buyerForm');
+    if (buyerForm) {
+      buyerForm.addEventListener('submit', function (ev) {
+        ev.preventDefault();
+        const msg = document.getElementById('buyerMsg');
+        const company = buyerForm.elements['company'].value || 'Company';
+        msg.textContent = `Thanks ${company}. Your procurement request is received — our sourcing team will get in touch.`;
+        buyerForm.reset();
+      });
+    }
+  </script>
+</body>
+</html>

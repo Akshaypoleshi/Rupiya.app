@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Rupiya.app — FPOs</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">rupiya.app</a>
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="farmers.html">Farmers</a>
+        <a href="fpos.html" class="active">FPOs</a>
+        <a href="buyers.html">Buyers</a>
+      </nav>
+      <a class="cta" href="#fpoSignup">Get Support</a>
+    </div>
+  </header>
+
+  <main class="container page">
+    <section class="page-hero">
+      <h1>For Farmer Producer Organizations</h1>
+      <p class="lede">Empower your members with training, market linkages, and carbon revenue access.</p>
+    </section>
+
+    <section class="benefits">
+      <h2>How rupiya.app empowers FPOs</h2>
+      <div class="grid-3">
+        <div class="feature">
+          <h3>Aggregation & Buy-back</h3>
+          <p>Streamlined aggregation, quality checks and guaranteed buy-back flows to institutional buyers.</p>
+        </div>
+        <div class="feature">
+          <h3>Training & Capacity Building</h3>
+          <p>On-field demos, digital toolkits and train-the-trainer programs for FPO staff.</p>
+        </div>
+        <div class="feature">
+          <h3>Carbon Credit Revenue</h3>
+          <p>Plot-level verification support, credit aggregation and transparent revenue distribution models.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="services">
+      <h2>Services for FPOs</h2>
+      <ul class="benefits">
+        <li>Data-driven field mapping and farmer onboarding</li>
+        <li>Supply chain and logistics coordination</li>
+        <li>Access to finance and input bundling</li>
+        <li>Traceability dashboards and certification support</li>
+      </ul>
+    </section>
+
+    <section class="collaboration">
+      <h2>Collaboration benefits</h2>
+      <p>Partnering with rupiya.app gives FPOs direct access to institutional buyers, improved bargaining power, and technical support to increase member incomes.</p>
+      <div class="quick-facts">
+        <div>
+          <strong>Farmer Reach</strong>
+          <p>Scale onboarding with our field teams.</p>
+        </div>
+        <div>
+          <strong>Revenue Sharing</strong>
+          <p>Transparent models for carbon and produce sales.</p>
+        </div>
+        <div>
+          <strong>Reporting</strong>
+          <p>Access to traceability and impact reports for partners and investors.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="signup" id="fpoSignup">
+      <h2>FPO sign-up</h2>
+      <p>Register your FPO and an onboarding manager will reach out.</p>
+      <form id="fpoForm" class="form">
+        <label>FPO name
+          <input type="text" name="fpoName" required />
+        </label>
+        <label>Primary contact name
+          <input type="text" name="contactName" required />
+        </label>
+        <label>Phone number
+          <input type="tel" name="phone" required />
+        </label>
+        <label>Number of member farmers
+          <input type="number" name="members" min="1" />
+        </label>
+        <button type="submit" class="btn">Register FPO</button>
+        <p id="fpoMsg" class="form-msg" aria-live="polite"></p>
+      </form>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <strong>rupiya.app</strong></p>
+    </div>
+  </footer>
+
+  <script>
+    const fpoForm = document.getElementById('fpoForm');
+    if (fpoForm) {
+      fpoForm.addEventListener('submit', function (ev) {
+        ev.preventDefault();
+        const msg = document.getElementById('fpoMsg');
+        const name = fpoForm.elements['fpoName'].value || 'FPO';
+        msg.textContent = `Thanks ${name}. Your FPO registration is received — our onboarding manager will contact you soon.`;
+        fpoForm.reset();
+      });
+    }
+  </script>
+</body>
+</html>
